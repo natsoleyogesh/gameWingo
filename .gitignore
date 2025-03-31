@@ -1,0 +1,5 @@
+node_modules/
+.vercel
+
+# Ignore all .zip files
+*.zip
