@@ -145,6 +145,29 @@ const getSalaryRecord = async (req, res) => {
         rows: getPhone,
     })
 }
+
+
+const aboutusPage = async (req, res) => {
+    return res.render("aboutUs/index.ejs");
+}
+
+const howToPlayPage = async (req, res) => {
+    return res.render("howToPlay/index.ejs");
+}
+
+const legalityPage = async (req, res) => {
+    return res.render("legality/index.ejs");
+}
+
+const refundPolicyPage = async (req, res) => {
+    return res.render("refundPolicy/index.ejs");
+}
+
+const termsOfServicePage = async (req, res) => {
+    return res.render("termsOfService/index.ejs");
+}
+
+
 module.exports = {
     homePage,
     checkInPage,
@@ -172,4 +195,10 @@ module.exports = {
     transfer,
     recordsalary,
     getSalaryRecord,
+    // new pages
+    aboutusPage,
+    howToPlayPage,
+    legalityPage,
+    refundPolicyPage,
+    termsOfServicePage
 }

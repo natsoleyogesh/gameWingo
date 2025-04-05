@@ -126,6 +126,9 @@ const register = async (req, res) => {
     }
 
     try {
+        const [check_user] = await connection.query('SELECT * FROM users');
+
+        console.log(check_user, "check_user")
         const [check_u] = await connection.query('SELECT * FROM users WHERE phone = ?', [username]);
         const [check_i] = await connection.query('SELECT * FROM users WHERE code = ? ', [invitecode]);
         const [check_ip] = await connection.query('SELECT * FROM users WHERE ip_address = ? ', [ip]);
@@ -150,7 +153,7 @@ const register = async (req, res) => {
 
                     let [check_code] = await connection.query('SELECT * FROM users WHERE invite = ? ', [invitecode]);
 
-                    if(check_i.name_user !=='Admin'){
+                    if (check_i.name_user !== 'Admin') {
                         let levels = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35, 38, 41, 44];
 
                         for (let i = 0; i < levels.length; i++) {
@@ -336,7 +339,7 @@ const forGotPassword = async (req, res) => {
 
 }
 
-const keFuMenu = async(req, res) => {
+const keFuMenu = async (req, res) => {
     let auth = req.cookies.auth;
 
     const [users] = await connection.query('SELECT `level`, `ctv` FROM users WHERE token = ?', [auth]);
@@ -358,8 +361,8 @@ const keFuMenu = async(req, res) => {
         }
         telegram = settings[0].telegram;
     }
-    
-    return res.render("keFuMenu.ejs", {telegram}); 
+
+    return res.render("keFuMenu.ejs", { telegram });
 }
 
 

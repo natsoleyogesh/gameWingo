@@ -12,7 +12,7 @@ PAYMENT_INFO=WINGO PAYMENT
 PAYMENT_EMAIL=manas.xdr@gmail.com
 
 APP_BASE_URL=https://108mall.xyz
-APP_NAME=MM Club
+APP_NAME=rummyrm
 
 DATABASE_HOST=localhost
 DATABASE_USER=root
