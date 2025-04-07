@@ -167,6 +167,10 @@ const termsOfServicePage = async (req, res) => {
     return res.render("termsOfService/index.ejs");
 }
 
+const footerPage = async (req, res) => {
+    return res.render("footer/footer.ejs");
+}
+
 
 module.exports = {
     homePage,
@@ -200,5 +204,6 @@ module.exports = {
     howToPlayPage,
     legalityPage,
     refundPolicyPage,
-    termsOfServicePage
+    termsOfServicePage,
+    footerPage
 }

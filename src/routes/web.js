@@ -132,6 +132,7 @@ const initWebRouter = (app) => {
   router.get('/legality', homeController.legalityPage);
   router.get('/refund-policy', homeController.refundPolicyPage);
   router.get('/terms-of-service', homeController.termsOfServicePage);
+  router.get('/footer',homeController.footerPage);
 
   // new page End
 
