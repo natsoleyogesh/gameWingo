@@ -171,6 +171,10 @@ const footerPage = async (req, res) => {
     return res.render("footer/footer.ejs");
 }
 
+const rummyPoolPage = async (req, res) => {
+    return res.render("rummyPool/index.ejs");
+}
+
 
 module.exports = {
     homePage,
@@ -205,5 +209,6 @@ module.exports = {
     legalityPage,
     refundPolicyPage,
     termsOfServicePage,
-    footerPage
+    footerPage,
+    rummyPoolPage
 }

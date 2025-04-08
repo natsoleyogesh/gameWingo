@@ -1,192 +1,136 @@
 <!DOCTYPE html>
-<html translate="no" data-dpr="1" style="font-size: 48.16px">
+<html lang="en" translate="no" data-dpr="1">
 
 <head>
-    <!-- <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="robots" content="noindex,nofollow" />
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport" />
-    <title>rummyrm</title>
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
-    <link href="/css/wallet/main.css" rel="stylesheet" />
-    <link href="/css/wallet/chunk_2-1.css" rel="stylesheet" />
-    <link href="/css/wallet/chunk_2-2.css" rel="stylesheet" />
-    <link href="/css/wallet/chunk_2-3.css" rel="stylesheet" />
-    <link rel="shortcut icon" href="/images/bitbug_favicon.ico" type="image/x-icon" /> -->
   <style>
     footer {
-    /* background-color: #333; */
-    background-color: rgba(56, 0, 0, 0.5);
-    color: #fff;
-    padding: 30px 20px;
-    margin-bottom: 20px;
-}
+        /* background-color: rgba(56, 0, 0, 0.5); */
+        background-color: rgb(121 67 67 / 31%);
+        color: #fff;
+        padding: 30px 20px;
+        margin-bottom: 20px;
+    }
 
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.footer-nav ul,
-.footer-legal-links ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    .footer-nav {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin: 0 auto;
+    }
 
-.footer-nav ul li,
-.footer-legal-links ul li {
-    margin: 10px 20px;
-}
+    .footer-nav ul {
+        list-style-type: none;
+        /* padding: 20px; */
+        padding: 0px 29px;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
 
-.footer-nav a,
-.footer-legal-links a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-}
+    .footer-nav ul li {
+        margin: 5px 0;
+    }
 
-.footer-nav a:hover,
-.footer-legal-links a:hover {
-    color: #f1c40f;
-}
+    .footer-nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
 
-.footer-app-download img {
-    margin: 10px;
-}
+    .footer-nav a:hover {
+        color: #f1c40f;
+    }
 
-.footer-certifications img,
-.footer-payment img {
-    margin: 10px;
-    width: 50px;
-    height: auto;
-}
+    .footer-company-info,
+    .footer-legal-info,
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-.footer-bottom {
-    margin-top: 20px;
-    text-align: center;
-}
+    .footer-bottom p {
+        margin: 5px 0;
+    }
 
-.footer-bottom p {
-    margin: 5px 0;
-}
+    /* For small screens, reduce padding and font-size */
+    @media (max-width: 768px) {
+        .footer-nav {
+            flex-direction: column;
+            align-items: center;
+        }
 
+        .footer-nav ul {
+            margin: 10px 0;
+        }
+
+        .footer-bottom {
+            margin-top: 15px;
+        }
+
+        .footer-company-info p,
+        .footer-legal-info p {
+            font-size: 12px;
+        }
+    }
   </style>
 </head>
 
-<body style="font-size: 12px">
-    <div >
-        <!-- <div data-v-784d91eb="" class="mian"> -->
-            <footer>
-                <div class="footer-container">
-                    <!-- Footer Top Section: Navigation Links -->
-                    <div class="footer-nav">
-                        <ul>
-                            <!-- <li><a href="/home">Home</a></li>
-                            <li><a href="/about-us">About us</a></li>
-                            <li><a href="/how-to-play-rummyrm">How to play rummy</a></li>
-                            <li><a href="/legality">Legality</a></li>
-                            <li><a href="/terms-of-service">Terms of service</a></li>
-                            <li><a href="/refund-policy">Refund policy</a></li> -->
-                            <!-- <li><a href="/how-to-play-rummyrm">How to play rummy</a></li>
-                            <li><a href="/rummy-tournaments">Rummy tournaments</a></li>
-                            <li><a href="/cash-rummy-game">Cash rummy game</a></li>
-                            <li><a href="/indian-rummy">Indian rummy</a></li>
-                            <li><a href="/tds-filing">TDS filing</a></li>
-                            <li><a href="/refer-your-friend">Refer your friend</a></li>
-                            <li><a href="/superboost-offer">Superboost offer</a></li>
-                            <li><a href="/rummy-offers">Rummy offers</a></li>
-                            <li><a href="/champions-talk">Champion's talk</a></li>
-                            <li><a href="/play-responsibly">Play responsibly</a></li> -->
-                        </ul>
-                    </div>
-            
-                    <!-- Footer Middle Section: Legal Links -->
-                    <div class="footer-legal-links">
-                        <ul>
-                            <li><a href="/home">Home</a></li>
-                            <li><a href="/about-us">About us</a></li>
-                            <li><a href="/how-to-play-rummyrm">How to play rummy</a></li>
-                            <li><a href="/legality">Legality</a></li>
-                            <li><a href="/terms-of-service">Terms of service</a></li>
-                            <li><a href="/refund-policy">Refund policy</a></li>
-                            <!-- <li><a href="/help-and-support">Help & support</a></li> -->
-                            <!-- <li><a href="/press">Press</a></li> -->
-                            <!-- <li><a href="/privacy-policy">Privacy policy</a></li> -->
-                            <!-- <li><a href="/cash-withdrawal-policy">Cash withdrawal policy</a></li> -->
-                            <!-- <li><a href="/fair-play-policy">Fair play policy</a></li> -->
-                        </ul>
-                    </div>
-            
-                   
-                   
-            
-                    <!-- Footer Company Information -->
-                    <div class="footer-company-info">
-                        <p><strong>KARANPAWA MEDIA PRIVATE LIMITED</strong></p>
-                        <p>A-316, Rajhans Plaza, Ahinsa Khand-1, Indirapuram,
-                            Ghaziabad, Shipra Sun City, Ghaziabad, Ghaziabad, Uttar
-                            Pradesh, India, 201014</p>
-                        <!-- <p><strong>Email:</strong> <a style="color: blueviolet;" href="karannkumare@gmail.com">karannkumare@gmail.com</a></p> -->
-                        <p><strong>Email:</strong> 
-                            <a style="color: blueviolet;" 
-                               href="mailto:karannkumare@gmail.com?subject=Inquiry&body=Hello, I need help with...">
-                               karannkumare@gmail.com
-                            </a>
-                         </p>
-                         
-                    </div>
-            
-                    <!-- Footer Legal Information -->
-                    <div class="footer-legal-info">
-                        <p>Players from Andhra Pradesh, Telangana, Nagaland, and Sikkim are not allowed to play online cash rummy.</p>
-                        <!-- <p>Nation's Trusted Rummy App Disclaimer: As per a recent study conducted by Unomer (February, 2023), which surveyed 2,000 rummy players across India, aged 21–50, who play rummy on their smartphones.</p> -->
-                    </div>
-            
-                   
-            
-                    <!-- Footer Bottom Section: Copyright -->
-                    <div class="footer-bottom">
-                        <p>&copy; 2025 RummyRM. All Rights Reserved.</p>
-                        <p>Made with ❤️ in India</p>
-                    </div>
+<body style="font-size: 12px;">
+    <div>
+        <footer>
+            <div class="footer-container">
+                <!-- Footer Top Section: Navigation Links -->
+                <div class="footer-nav">
+                    <!-- Left Side Navigation Menu -->
+                    <ul>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/about-us">About us</a></li>
+                        <li><a href="/how-to-play-rummyrm">How to play rummy</a></li>
+                        
+                    </ul>
+
+                    <ul>
+                        <li><a href="/legality">Legality</a></li>
+                        <li><a href="/terms-of-service">Terms of service</a></li>
+                        <li><a href="/refund-policy">Refund policy</a></li>
+                    </ul>
+
                 </div>
-            </footer>
-            
-            <!-- <div data-v-7692a079="" data-v-784d91eb="" class="Loading c-row c-row-middle-center" style="display: none;">
-                <div data-v-7692a079="" class="van-loading van-loading--circular">
-                    <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
-                        style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                            viewBox="0 0 200 200" width="200" height="200" preserveAspectRatio="xMidYMid meet"
-                            style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;">
-                            <g transform="matrix(-0.5984085202217102,0.8011911511421204,-0.8011911511421204,-0.5984085202217102,239.9599609375,79.72173309326172)"
-                                style="display: block;">
-                                <image width="200px" height="200px" preserveAspectRatio="xMidYMid slice"
-                                    xlink:href="/index_files/loadingspinner.png"></image>
-                            </g>
-                            <g transform="matrix(0.9408400058746338,0,0,0.9408400058746338,20.969436645507812,79.30152130126953)"
-                                style="display: block;">
-                                <image width="168px" height="44px" preserveAspectRatio="xMidYMid slice"
-                                    xlink:href="/index_files/h5setting_202401100608011fs2.png"></image>
-                            </g>
-                        </svg>
-                    </span>
+
+                <!-- Footer Company Information -->
+                <div class="footer-company-info">
+                    <p><strong>KARANPAWA MEDIA PRIVATE LIMITED</strong></p>
+                    <p>A-316, Rajhans Plaza, Ahinsa Khand-1, Indirapuram, Ghaziabad, Shipra Sun City, Ghaziabad, Uttar Pradesh, India, 201014</p>
+                    <p><strong>Email:</strong> 
+                        <a style="color: blueviolet;" 
+                           href="mailto:karannkumare@gmail.com?subject=Inquiry&body=Hello, I need help with...">
+                           karannkumare@gmail.com
+                        </a>
+                    </p>
                 </div>
-            </div> -->
-        <!-- </div> -->
+
+                <!-- Footer Legal Information -->
+                <div class="footer-legal-info">
+                    <p>Players from Andhra Pradesh, Telangana, Nagaland, and Sikkim are not allowed to play online cash rummy.</p>
+                </div>
+
+                <!-- Footer Bottom Section: Copyright -->
+                <div class="footer-bottom">
+                    <p>&copy; 2025 RummyRM. All Rights Reserved.</p>
+                    <p>Made with ❤️ in India</p>
+                </div>
+            </div>
+        </footer>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/js/client.js"></script>
 </body>
 
 </html>

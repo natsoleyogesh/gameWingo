@@ -134,6 +134,8 @@ const initWebRouter = (app) => {
   router.get('/terms-of-service', homeController.termsOfServicePage);
   router.get('/footer',homeController.footerPage);
 
+  router.get('/rummy-pool',middlewareController, homeController.rummyPoolPage);
+
   // new page End
 
   // BET wingo
