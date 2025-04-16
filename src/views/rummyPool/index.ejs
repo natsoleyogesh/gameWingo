@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html translate="no" data-dpr="1" style="font-size: 48.16px">
 
@@ -7177,15 +7173,16 @@
         .van-tabbar--unfit {
             padding-bottom: 0
         }
-        
     </style>
-     <style>
+    <style>
         iframe {
             width: 100%;
             height: 500px;
             border: none;
-            display: block; /* Ensure it's displayed by default */
+            display: block;
+            /* Ensure it's displayed by default */
         }
+
         .loading {
             text-align: center;
             font-size: 18px;
@@ -7216,10 +7213,10 @@
             </div>
             <!-- <h1 style="text-align: center;"></h1> -->
 
-<!-- Loading text while iframe is being loaded -->
-<div class="loading" id="loadingMessage">Loading Rummy Pool...</div>
+            <!-- Loading text while iframe is being loaded -->
+            <div class="loading" id="loadingMessage">Loading Rummy Pool...</div>
 
-<iframe id="rummyPoolIframe"></iframe>
+            <iframe id="rummyPoolIframe"></iframe>
 
 
             <div data-v-7692a079="" data-v-784d91eb="" class="Loading c-row c-row-middle-center" style="display: none;">
@@ -7247,25 +7244,102 @@
         </div>
     </div>
     <script>
+        // window.onload = () => {
+        //     const iframe = document.getElementById("rummyPoolIframe");
+        //     const loadingMessage = document.getElementById("loadingMessage");
+
+        //     // Simulate API call (you can replace this with a real API call)
+        //     setTimeout(() => {
+        //         // Simulated API response
+        //         const data = {
+        //             url: "https://www.example.com"  // URL to load inside iframe (replace with actual API response)
+        //         };
+
+        //         // Set iframe src to the URL returned by the API
+        //         iframe.src = data.url;
+
+        //         // Hide the loading message once iframe is ready
+        //         loadingMessage.style.display = 'none';
+        //     }, 1000); // Simulated 1 second delay
+        // };
+        // window.onload = () => {
+        //     const iframe = document.getElementById("rummyPoolIframe");
+        //     const loadingMessage = document.getElementById("loadingMessage");
+
+        //     // Simulate the login API call and response
+        //     fetch('https://ex-api-demo-yy.568win.com/web-root/restricted/player/login.aspx', {
+        //         method: 'POST',
+        //         headers: {
+        //             'Content-Type': 'application/json'
+        //         },
+        //         body: JSON.stringify({
+        //             "Username": "test123",
+        //             "Portfolio": "SeamlessGame",
+        //             "IsWapSports": false,
+        //             "CompanyKey": "BA67383CC90F4F6AA1176125803FB7BD",
+        //             "ServerId": "YY-TEST"
+        //         }),
+        //         // mode: 'no-cors' // This disables CORS checks but makes the response opaque
+        //     }).then(response => {
+        //         console.log("Raw response: ", response);
+        //         return response.json(); // Only parse JSON if the response is valid JSON
+        //     }).then(data => {
+
+        //         console.log(data, ":data")
+        //         // Extract URL from login API response
+        //         const loginUrl = data.url;
+
+        //         // Make the second API call to get the final URL for the iframe
+        //         return fetch(`https://${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
+        //     })
+        //         .then(response => response.json())
+        //         .then(data => {
+        //             // Set the iframe source with the final URL from the second API
+        //             iframe.src = data.url;
+        //             loadingMessage.style.display = 'none';  // Hide the loading message once the iframe is ready
+        //         })
+        //         .catch(error => {
+        //             console.error("Error during API call:", error);
+        //             loadingMessage.style.display = 'none';  // Hide loading message if there's an error
+        //         });
+        // };
         window.onload = () => {
             const iframe = document.getElementById("rummyPoolIframe");
             const loadingMessage = document.getElementById("loadingMessage");
-    
-            // Simulate API call (you can replace this with a real API call)
-            setTimeout(() => {
-                // Simulated API response
-                const data = {
-                    url: "https://www.example.com"  // URL to load inside iframe (replace with actual API response)
-                };
-    
-                // Set iframe src to the URL returned by the API
-                iframe.src = data.url;
-    
-                // Hide the loading message once iframe is ready
-                loadingMessage.style.display = 'none';
-            }, 1000); // Simulated 1 second delay
+
+            // Simulate the login API call and response using Axios
+            axios.post('/api/ex-api-demo-login', {
+                "Username": "test123",
+                "Portfolio": "SeamlessGame",
+                "IsWapSports": false,
+                "CompanyKey": "BA67383CC90F4F6AA1176125803FB7BD",
+                "ServerId": "YY-TEST"
+            })
+                .then(response => {
+                    console.log("Raw response: ", response);
+                    // Extract URL from login API response
+                    const loginUrl = response.data.url;
+
+                    // Make the second API call through the proxy endpoint to avoid CORS issues
+                    return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
+                })
+                .then(response => {
+                    // Set the iframe source with the final URL from the second API
+                    console.log(response, "responssss")
+                    iframe.src = response.data.url;
+                    loadingMessage.style.display = 'none';  // Hide the loading message once the iframe is ready
+                })
+                .catch(error => {
+                    console.error("Error during API call:", error);
+                    loadingMessage.style.display = 'none';  // Hide loading message if there's an error
+                });
         };
+
+
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/client.js"></script>
 </body>

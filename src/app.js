@@ -6,6 +6,7 @@ import routes from './routes/web';
 import cronJobContronler from './controllers/cronJobContronler';
 import socketIoController from './controllers/socketIoController';
 import connection from './config/connectDB';
+import axios from 'axios';
 
 let cookieParser = require('cookie-parser');
 
@@ -20,9 +21,9 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/test",(req,res)=>{
+app.get("/test", (req, res) => {
     return res.status(200).json({
-        message:"testing DOne!"
+        message: "testing DOne!"
     })
 })
 
@@ -68,6 +69,32 @@ app.post('/api/webapi/admin/approveRequest', async (req, res) => {
         res.status(500).json({ success: false, message: 'Error updating the database.', error: error.message });
     } finally {
         console.log("End of request processing.");
+    }
+});
+
+app.post('/api/ex-api-demo-login', async (req, res) => {
+    try {
+        const response = await axios.post('https://ex-api-demo-yy.568win.com/web-root/restricted/player/login.aspx', req.body, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+        return res.status(200).json(response.data);
+    } catch (error) {
+        return res.status(500).json({ message: 'Error during API call', error: error.message });
+    }
+});
+
+// Endpoint to handle proxying the GET request
+app.get('/api/proxy', async (req, res) => {
+    const url = req.query.url; // Get the full URL from the query string
+
+    try {
+        // Forward the GET request to the external server
+        const response = await axios.get(url);
+        console.log(response, "serverresponse")
+        res.json(response.data);  // Send the data back to the frontend
+    } catch (error) {
+        console.error('Error during proxy request:', error);
+        return res.status(500).json({ message: 'Error during API call', error: error.message });
     }
 });
 
