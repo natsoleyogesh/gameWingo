@@ -91,7 +91,7 @@ app.get('/api/proxy', async (req, res) => {
         // Forward the GET request to the external server
         const response = await axios.get(url);
         console.log(response, "serverresponse")
-        res.json(response.data);  // Send the data back to the frontend
+        res.status(200).send(response.data);  // Send the data back to the frontend
     } catch (error) {
         console.error('Error during proxy request:', error);
         return res.status(500).json({ message: 'Error during API call', error: error.message });

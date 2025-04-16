@@ -7319,16 +7319,21 @@
                     console.log("Raw response: ", response);
                     // Extract URL from login API response
                     const loginUrl = response.data.url;
-
+                    iframe.src = `https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`;
+                    loadingMessage.style.display = 'none';
+                    // Redirect to the URL received from the API response
+                    // window.location.href = `https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`; // Redirect to the URL
                     // Make the second API call through the proxy endpoint to avoid CORS issues
-                    return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
+                    // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
-                .then(response => {
-                    // Set the iframe source with the final URL from the second API
-                    console.log(response, "responssss")
-                    iframe.src = response.data.url;
-                    loadingMessage.style.display = 'none';  // Hide the loading message once the iframe is ready
-                })
+                // .then(response => {
+                //     // Set the iframe source with the final URL from the second API
+                //     console.log(response, "responssss")
+                //     // Redirect to the URL received from the API response
+                //     // window.location.href = response.data.url; // Redirect to the URL
+                //     // iframe.src = response.data.url;
+                //     // loadingMessage.style.display = 'none';  // Hide the loading message once the iframe is ready
+                // })
                 .catch(error => {
                     console.error("Error during API call:", error);
                     loadingMessage.style.display = 'none';  // Hide loading message if there's an error
