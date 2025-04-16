@@ -7177,7 +7177,7 @@
     <style>
         iframe {
             width: 100%;
-            height: 500px;
+            height: 615px;
             border: none;
             display: block;
             /* Ensure it's displayed by default */
@@ -7187,7 +7187,11 @@
             text-align: center;
             font-size: 18px;
             margin-top: 20px;
-            color: #333;
+            color: white;
+        }
+
+        .loading-spin {
+            display: block;
         }
     </style>
 </head>
@@ -7214,12 +7218,13 @@
             <!-- <h1 style="text-align: center;"></h1> -->
 
             <!-- Loading text while iframe is being loaded -->
-            <div class="loading" id="loadingMessage">Loading Rummy Pool...</div>
+            <!-- <div class="loading" id="loadingMessage">Loading Rummy Pool...</div> -->
 
             <iframe id="rummyPoolIframe"></iframe>
 
 
-            <div data-v-7692a079="" data-v-784d91eb="" class="Loading c-row c-row-middle-center" style="display: none;">
+            <div data-v-7692a079="" data-v-784d91eb="" class="Loading c-row c-row-middle-center" class="loading-spin"
+                id="loadingSpin">
                 <div data-v-7692a079="" class="van-loading van-loading--circular">
                     <span data-v-7692a079="" class="van-loading__spinner van-loading__spinner--circular"
                         style="width: auto; height: auto; -webkit-animation-duration: 1s; animation-duration: 1s;">
@@ -7240,7 +7245,6 @@
                     </span>
                 </div>
             </div>
-            <%- include('../footer/footer'); %>
         </div>
     </div>
     <script>
@@ -7305,7 +7309,7 @@
         // };
         window.onload = () => {
             const iframe = document.getElementById("rummyPoolIframe");
-            const loadingMessage = document.getElementById("loadingMessage");
+            const loadingMessage = document.getElementById("loadingSpin");
 
             // Simulate the login API call and response using Axios
             axios.post('/api/ex-api-demo-login', {
@@ -7320,20 +7324,14 @@
                     // Extract URL from login API response
                     const loginUrl = response.data.url;
                     iframe.src = `https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`;
-                    loadingMessage.style.display = 'none';
-                    // Redirect to the URL received from the API response
-                    // window.location.href = `https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`; // Redirect to the URL
-                    // Make the second API call through the proxy endpoint to avoid CORS issues
+                    // loadingMessage.style.display = 'none';
+                    // Attach the 'onload' event to the iframe to know when it's fully loaded
+                    iframe.onload = () => {
+                        // Hide the loading message once the iframe is fully loaded
+                        loadingMessage.style.display = 'none';
+                    };
                     // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
-                // .then(response => {
-                //     // Set the iframe source with the final URL from the second API
-                //     console.log(response, "responssss")
-                //     // Redirect to the URL received from the API response
-                //     // window.location.href = response.data.url; // Redirect to the URL
-                //     // iframe.src = response.data.url;
-                //     // loadingMessage.style.display = 'none';  // Hide the loading message once the iframe is ready
-                // })
                 .catch(error => {
                     console.error("Error during API call:", error);
                     loadingMessage.style.display = 'none';  // Hide loading message if there's an error
