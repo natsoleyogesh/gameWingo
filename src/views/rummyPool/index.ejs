@@ -7265,7 +7265,8 @@
                     console.log("Raw response: ", response);
                     // Extract URL from login API response
                     const loginUrl = response.data.url;
-                    iframe.src = `https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=m&betCode=5CNY2050000_5CNY10200000`;
+                    // gpid=10000
+                    iframe.src = `https:${loginUrl}&gpid=1020&gameid=0&lang=en&device=m&betCode=5CNY2050000_5CNY10200000`;
                     // loadingMessage.style.display = 'none';
                     // Attach the 'onload' event to the iframe to know when it's fully loaded
                     iframe.onload = () => {
