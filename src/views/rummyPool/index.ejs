@@ -7274,9 +7274,6 @@
                     iframe.onload = () => {
                         // Hide the loading message once the iframe is fully loaded
                         loadingMessage.style.display = 'none';
-                        const iframeDocument = iframe.contentWindow.document;
-                        console.log(iframeDocument, "iframeDocument")
-
                     };
                     // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
