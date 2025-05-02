@@ -7178,6 +7178,7 @@
         iframe {
             width: 100%;
             height: 700px;
+            height: 255px;
             border: none;
             display: block;
             /* Ensure it's displayed by default */
@@ -7221,6 +7222,7 @@
             <!-- <div class="loading" id="loadingMessage">Loading Rummy Pool...</div> -->
 
             <iframe id="rummyPoolIframe"></iframe>
+            <!-- <iframe id="rummyPoolIframe" sandbox="allow-scripts allow-same-origin"></iframe> -->
 
 
             <div data-v-7692a079="" data-v-784d91eb="" class="Loading c-row c-row-middle-center" class="loading-spin"
@@ -7272,6 +7274,9 @@
                     iframe.onload = () => {
                         // Hide the loading message once the iframe is fully loaded
                         loadingMessage.style.display = 'none';
+                        const iframeDocument = iframe.contentWindow.document;
+                        console.log(iframeDocument, "iframeDocument")
+
                     };
                     // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
