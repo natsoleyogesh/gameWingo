@@ -7250,7 +7250,7 @@
         </div>
     </div>
     <script>
-       
+
         window.onload = () => {
             const iframe = document.getElementById("rummyPoolIframe");
             const loadingMessage = document.getElementById("loadingSpin");
@@ -7274,6 +7274,15 @@
                     iframe.onload = () => {
                         // Hide the loading message once the iframe is fully loaded
                         loadingMessage.style.display = 'none';
+
+                        let frameObj =
+                            document.getElementById("rummyPoolIframe");
+                        let frameContent = frameObj
+                            .contentWindow.document.body.innerHTML;
+
+                        console.log(frameObj, "----frameObject")
+                        console.log(frameContent, "----frameContent")
+
                     };
                     // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
