@@ -7177,7 +7177,7 @@
     <style>
         iframe {
             width: 100%;
-            height: 700px;
+            /* height: 700px; */
             height: 255px;
             border: none;
             display: block;
@@ -7257,7 +7257,7 @@
 
             // Simulate the login API call and response using Axios
             axios.post('/api/ex-api-demo-login', {
-                "Username": "test123",
+                "Username": "user002",
                 "Portfolio": "SeamlessGame",
                 "IsWapSports": false,
                 "CompanyKey": "BA67383CC90F4F6AA1176125803FB7BD",
@@ -7268,26 +7268,26 @@
                     // Extract URL from login API response
                     const loginUrl = response.data.url;
                     // gpid=10000
-                    iframe.src = `https:${loginUrl}&gpid=1020&gameid=147&lang=en&device=m&betCode=5CNY2050000_5CNY10200000`;
+                    iframe.src = `https:${loginUrl}&gpid=1020&gameid=149&lang=en&device=m&betCode=5CNY2050000_5CNY10200000`;
                     // loadingMessage.style.display = 'none';
                     // Attach the 'onload' event to the iframe to know when it's fully loaded
                     iframe.onload = () => {
                         // Hide the loading message once the iframe is fully loaded
                         loadingMessage.style.display = 'none';
 
-                        let frameObj =
-                            document.getElementById("rummyPoolIframe");
-                        let frameContent = frameObj
-                            .contentWindow.document.body.innerHTML;
+                        // let frameObj =
+                        //     document.getElementById("rummyPoolIframe");
+                        // let frameContent = frameObj
+                        //     .contentWindow.document.body.innerHTML;
 
-                        console.log(frameObj, "----frameObject")
-                        console.log(frameContent, "----frameContent")
+                        // console.log(frameObj, "----frameObject")
+                        // console.log(frameContent, "----frameContent")
 
                     };
                     // return axios.get(`https:${loginUrl}&gpid=10000&gameid=0&lang=en&device=d&betCode=5CNY2050000_5CNY10200000`);
                 })
                 .catch(error => {
-                    console.error("Error during API call:", error);
+                    console.log("Error during API call:---------", error);
                     loadingMessage.style.display = 'none';  // Hide loading message if there's an error
                 });
         };
