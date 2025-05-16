@@ -7,6 +7,7 @@ import cronJobContronler from './controllers/cronJobContronler';
 import socketIoController from './controllers/socketIoController';
 import connection from './config/connectDB';
 import axios from 'axios';
+import cors from 'cors';
 
 let cookieParser = require('cookie-parser');
 
@@ -20,6 +21,15 @@ app.use(cookieParser());
 // app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+    //   allowedHeaders: ['Content-Type', 'Authorization'],
+    //   credentials: false,
+}));
+
+app.options('*', cors());  // Enable pre-flight requests for all routes
 
 app.get("/test", (req, res) => {
     return res.status(200).json({
