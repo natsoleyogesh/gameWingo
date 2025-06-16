@@ -171,6 +171,14 @@ const footerPage = async (req, res) => {
     return res.render("footer/footer.ejs");
 }
 
+const privacyPolicyPage = async (req, res) => {
+    return res.render("privacyPolicy/index.ejs");
+}
+
+const kycPolicyPage = async (req, res) => {
+    return res.render("kycPolicy/index.ejs");
+}
+
 const rummyPoolPage = async (req, res) => {
     return res.render("rummyPool/index.ejs");
 }
@@ -210,5 +218,7 @@ module.exports = {
     refundPolicyPage,
     termsOfServicePage,
     footerPage,
+    privacyPolicyPage,
+    kycPolicyPage,
     rummyPoolPage
 }

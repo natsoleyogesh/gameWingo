@@ -132,9 +132,11 @@ const initWebRouter = (app) => {
   router.get('/legality', homeController.legalityPage);
   router.get('/refund-policy', homeController.refundPolicyPage);
   router.get('/terms-of-service', homeController.termsOfServicePage);
-  router.get('/footer',homeController.footerPage);
+  router.get('/footer', homeController.footerPage);
+  router.get('/privacy-policy', homeController.privacyPolicyPage);
+  router.get('/kyc-policy', homeController.kycPolicyPage);
 
-  router.get('/rummy-pool',middlewareController, homeController.rummyPoolPage);
+  router.get('/rummy-pool', middlewareController, homeController.rummyPoolPage);
 
   // new page End
 
