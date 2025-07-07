@@ -2355,7 +2355,7 @@ position: absolute;
     font-size: .32rem;
     font-weight: 500;
     line-height: .32rem;
-    margin-left: .93333rem
+    /* margin-left: .93333rem */
 }
 
 [data-v-9bebd08e] .navbar__content {
