@@ -1305,11 +1305,13 @@ textarea {
 }
 
 .navbar__content-center .headLogo[data-v-58c5e826] {
-    width: 2.98667rem;
+    /* width: 2.98667rem; */
+    width: 2.19667rem;
     height: 1.12rem;
     background-repeat: no-repeat;
     background-size: 2.98667rem 1.12rem;
-    background-position: center
+    background-position: center;
+    border-radius: 30px;
 }
 
 .navbar__content-right[data-v-58c5e826] {
